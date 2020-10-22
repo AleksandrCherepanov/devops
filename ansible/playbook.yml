@@ -1,0 +1,20 @@
+---
+- name: Install common utils
+  hosts: all
+  become: true
+  tasks:
+  - name: Install packages that allow apt to be used over HTTPS
+    package:
+      name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+      - net-tools
+      state: present
+  - name: Deploy configuration
+    shell: cp ./ansible/config.txt /home/vagrant
+    args:
+      executable: /bin/bash
+      chdir: /vagrant
