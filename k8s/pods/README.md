@@ -23,3 +23,8 @@ Delete a pod:
 kubectl delete pod {name}
 kubectl delete -f pod.yaml
 ```
+
+Execute command in a pod:
+```bash
+kubectl exec -it {pod_id} -- {command} (bash, env, etc)
+```

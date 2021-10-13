@@ -16,9 +16,9 @@ spec:
       containers:
         - image: quay.io/testing-farm/nginx:1.12  
           name: nginx
-          env:
-            - name: TEST
-              value: foo
+          envFrom:
+            - configMapRef:
+                name: my-configmap-env
           ports:
             - containerPort: 80
           resources:
