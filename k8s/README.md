@@ -18,3 +18,8 @@ Get history of an entity:
 ```bash
 kubectl history {entity} {entity_name}
 ```
+
+Get all resources:
+```bash
+kubectl get all 
+```
