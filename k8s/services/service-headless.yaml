@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hl-service
+spec:
+  selector: 
+    app:
+        probes-app
+  clusterIP: none
+  ports:
+    - name: http   
+      port: 80
+      targetPort: 80
+      protocol: TCP
+...
